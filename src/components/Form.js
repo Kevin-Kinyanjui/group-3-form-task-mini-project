@@ -25,16 +25,16 @@ function Form() {
         <input
           id="username-input"
           type="text"
+          value={userName}
           onChange={handleChangeUsername}
           placeholder="Username"
-          value={userName}
         />
         <input
           id="password-input"
           type="text"
+          value={password}
           onChange={handleChangePassword}
           placeholder="Password"
-          value={password}
         />
 
         <button id="login-button" disabled={isButtonDisabled} type="submit">
