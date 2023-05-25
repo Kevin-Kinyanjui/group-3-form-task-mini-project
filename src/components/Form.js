@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Form() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  //const [isdisabled, setIsDisabled] = useState(true);
 
   function handleChangeUsername(event) {
     setUserName(event.target.value);
@@ -14,8 +15,11 @@ function Form() {
 
   function handleSubmit(event) {
     event.preventDefault();
+
     console.log({ userName }, { password });
   }
+
+  const isSubmitDisabled = !(userName && password);
 
   return (
     <div>
@@ -32,7 +36,8 @@ function Form() {
           onChange={handleChangePassword}
           placeholder="Password"
         />
-        <button id="login-button" type="submit">
+
+        <button id="login-button" disabled={isSubmitDisabled} type="submit">
           Submit
         </button>
       </form>
